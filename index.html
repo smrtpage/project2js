@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Interactive</title>
+</head>
+<body>
+    <header class="header">
+        <div class="logo-section">
+            <img src="./img/icon.svg" class="icon-svg">
+            <div class="logo-section-text">
+                <h3 class="logo-section-first">Coding</h3>
+                <h3 class="logo-section-second">Magic</h3>
+            </div>
+        </div>
+        <div class="catalog">
+            <a class="catalog-item" href="#">Інтерактив</a>
+            <a class="catalog-item" href="#">Наша команда</a>
+            <a class="catalog-item" href="#">Контакти</a>
+        </div>
+        <div class="user-section">
+            <label class="switch">
+                <input type="checkbox">
+                <span class="slider round"></span>
+            </label>
+            <h3 class="congrat-text">Вітаємо, <span id="user-text"></span>!</h3>
+        </div>
+    </header>
+
+    <main class="main">
+
+        <div class="modal-window-section">
+            <img src="./img/close.svg" id="closeBtn">
+            <h3 class="modal-window-section-text">Привіт!
+                Ви потрапили на сайт інтерактивних ігор та завдань
+                Надіємось, що вам сподобається і ви отримаєте позитивні емоції!
+                Бажаємо Вам гарно провести час!
+            </h3>
+            <div class="registration-section">
+                <h3 class="registration-section-text">Введіть своє ім’я:</h3>
+                <input type="text" id="input-registration" placeholder="Ваше ім’я...">
+                <button id="btn-registration">Зберегти</button>
+            </div>
+        </div>
+
+        <div class="main-title-section">
+            <h2 class="main-title">Популярні інтерактивні ігри</h2>
+            <hr>
+        </div>
+        <div class="game-section">
+            <h2 class="game-section-title">Перевір в який рік ти народився</h2>
+            <div class="game-section-logic">
+                <input type="text" id="input-year" placeholder="Введіть рік народження">
+                <button id="btn-year"></button>
+                <p id="year-result"></p>
+            </div>
+        </div>
+        <hr>
+        <div class="game-section">
+            <h2 class="game-section-title">Вгадай число, яке загадав комп’ютер</h2>
+            <div class="game-section-logic">
+                <input type="text" id="input-digit" placeholder="Введіть число від 1-10">
+                <button id="btn-digit"></button>
+                <p id="digit-result"></p>
+            </div>
+        </div>
+        <hr>
+    </main>
+
+    <script src="./js.js"></script>
+</body>
+</html>
