@@ -11,6 +11,25 @@ let closeBtn = document.getElementById("closeBtn");
 let inputReg = document.getElementById("input-registration");
 let regBtn = document.getElementById("btn-registration");
 
+let subBtn = document.getElementById("email-btn");
+let subInput = document.getElementById("email-input");
+let subModalWindow = document.getElementById("modal-window-section-second");
+let closeBtnSecond = document.getElementById("closeBtnSecond");
+
+const checkbox = document.getElementById("checkbox");
+
+subBtn.addEventListener("click", function(){
+        subModalWindow.style.display = "flex";
+});
+
+closeBtnSecond.addEventListener("click", function(){
+    subModalWindow.style.display = "none";
+});
+
+checkbox.addEventListener("change", () => {
+  document.body.classList.toggle("dark");
+})
+
 regBtn.addEventListener("click", function(){
     userName.innerHTML = inputReg.value;
     closeBtn.parentElement.style.display = "none";

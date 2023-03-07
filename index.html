@@ -23,7 +23,7 @@
         </div>
         <div class="user-section">
             <label class="switch">
-                <input type="checkbox">
+                <input type="checkbox" id="checkbox">
                 <span class="slider round"></span>
             </label>
             <h3 class="congrat-text">Вітаємо, <span id="user-text"></span>!</h3>
@@ -44,6 +44,11 @@
                 <input type="text" id="input-registration" placeholder="Ваше ім’я...">
                 <button id="btn-registration">Зберегти</button>
             </div>
+        </div>
+
+        <div id="modal-window-section-second">
+            <img src="./img/close.svg" id="closeBtnSecond">
+            <h2 class="subsribe-thanktext">Дякую За Підписку!</h2>
         </div>
 
         <div class="main-title-section">
@@ -68,6 +73,140 @@
             </div>
         </div>
         <hr>
+
+        <div class="game-section">
+            <h2 class="game-section-title">Камінь - ножиці - папір</h2>
+                <div class="game-symbols">
+                    <img id="rock" src="./img/rock.svg" alt="rock">
+                    <img id="scissors" src="./img/scissors.svg" alt="scissors">
+                    <img id="paper" src="./img/paper.svg" alt="paper">
+                </div>
+                <p id="rps-result"></p>
+                <button id="rps-btn">Варіант комп’ютера</button>
+                <div class="points">
+                    <h3 class="points-title">Рахунок:</h3>
+                    <h3 id="comp-points">Комп’ютер - 0</h3>
+                    <h3 id="player-points">Ви - 0</h3>
+            </div>
+            <hr>
+        </div>
+        <div class="game-section">
+            <h2 class="game-section-title">Калькулятор</h2>
+            <div class="calculator">
+                <input type="text" id="digit-first-input" placeholder="Введіть число">
+                <div class="operations">
+                    <button id="plus">+</button>
+                    <button id="substract">-</button>
+                    <button id="multiply">*</button>
+                    <button id="division">/</button>
+                </div>
+                <input type="text" id="digit-second-input" placeholder="Введіть число">
+                <button id="equal">=</button>
+                <input type="text" id="digit-result-input" placeholder="Результат" disabled>
+            </div>
+            <hr>
+        </div>
+        <div class="game-section">
+            <h2 class="game-section-title">Калькулятор часу</h2>
+            <div class="calculator-time-section">
+                <div>
+                    <input type="text" id="input-time" placeholder="Введіть число в хв">
+                    <button id="btn-time"></button>
+                </div>
+                <p id="time-convertor-text">3 дн. 15:45:01</p>
+            </div>
+            <hr>
+        </div>
+        <div class="game-section">
+            <h2 class="game-section-title">Google динозавр</h2>
+            <div class="dino">
+                <img src="./img/Google dino.png">
+            </div>
+            <hr>
+        </div>
+        <div class="game-section">
+            <h2 class="game-section-title">Футбол</h2>
+            <div class="football">
+                <img src="./img/Rectangle 33.png">
+            </div>
+            <hr>
+        </div>
+        <div class="game-section">
+            <div class="max-number-game-section">
+                <h2 class="game-section-title">Введіть 3 числа</h2>
+                <div class="inputs-max-number">
+                    <input type="text" id="max-number-first-input" placeholder="Введіть число">
+                    <input type="text" id="max-number-second-input" placeholder="Введіть число">
+                    <input type="text" id="max-number-third-input" placeholder="Введіть число">
+                </div>
+            <p class="result-max-number">Найбільше число, яке ви ввели - <span id="max-number"></span></p>
+            </div>
+            <hr>
+        </div>
+        <div class="game-section">
+            <div class="student">
+                <p id="arrow-left"></p>
+                <h2 class="game-section-title">Наша команда</h2>
+                <div class="img-section"></div>
+                <h2 class="img-title">Лисак Ігор</h2>
+                <p class="img-subtitle">Зробив цей сайт</p>
+                <p id="arrow-right"></p>
+            </div>
+            <hr>
+        </div>
+        <div class="game-section">
+            <h2 class="game-section-title">Обери вченого/их</h2>
+            <div class="scientist-game-section">
+                <div class="scientists-photo-boxes">
+                    <div class="photo-box"></div>
+                    <div class="photo-box"></div>
+                    <div class="photo-box"></div>
+                    <div class="photo-box"></div>
+                    <div class="photo-box"></div>
+                    <div class="photo-box"></div>
+                    <div class="photo-box"></div>
+                    <div class="photo-box"></div>
+                    <div class="photo-box"></div>
+                    <div class="photo-box"></div>
+                    <div class="photo-box"></div>
+                    <div class="photo-box"></div>
+                </div>
+                <div class="scientists-btn-boxes">
+                    <button class="btn-scientist">Які вчені народилися в 19 ст.</button>
+                    <button class="btn-scientist">Відсортувати вчених за алфавітом</button>
+                    <button class="btn-scientist">Відсортувати вчених за кількістю прожитих років</button>
+                    <button class="btn-scientist">Знайти вченого, який народився найпізніше</button>
+                    <button class="btn-scientist">Знайти вчених, в яких співпадають перші літери імені і прізвища</button>
+                    <button class="btn-scientist">Знайти рік народження Albert Einshtein</button>
+                    <button class="btn-scientist">Знайти вчених, прізвища яких починаються на на літеру “С” </button>
+                    <button class="btn-scientist">Видалити всіх вчених, ім’я яких починається на “А”</button>
+                    <button class="btn-scientist">Знайти вченого, який прожив найдовше і вченого, який прожив найменше</button>
+                </div>
+            </div>
+        </div>
+        <footer class="footer">
+            <div class="logo-section twot">
+                <img src="./img/icon.svg" class="icon-svg tw">
+                <div class="logo-section-text">
+                    <h3 class="logo-section-first two">Coding</h3>
+                    <h3 class="logo-section-second two">Magic</h3>
+                </div>
+            </div>
+            <div class="social-medias">
+                <p class="tel">Тел: +38 (123) 456 78 90</p>
+                <p class="email">E-Mail: codingmagic@gmail.com</p>
+                <p class="facebook">Facebook: CodingMagic</p>
+                <p class="twitter">Twitter: CodingMagic</p>
+                <p class="instagram">Instagram: CodingMagic</p>
+            </div>
+            <div class="subscribe-section">
+                <div class="subscribe-field">
+                    <input type="email" id="email-input" placeholder="Ваша ел. адреса...">
+                    <button id="email-btn">Підписатись</button>
+                </div>
+                <p class="subscribe-text">*Підписавшись, Ви зможете ортимувати інформацію про новинки на сайті</p>
+            </div>
+        </footer>
     </main>
 
     <script src="./js.js"></script>
