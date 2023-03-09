@@ -8,6 +8,7 @@
     <title>Interactive</title>
 </head>
 <body>
+    
     <header class="header">
         <div class="logo-section">
             <img src="./img/icon.svg" class="icon-svg">
@@ -85,8 +86,8 @@
                 <button id="rps-btn">Варіант комп’ютера</button>
                 <div class="points">
                     <h3 class="points-title">Рахунок:</h3>
-                    <h3 id="comp-points">Комп’ютер - 0</h3>
-                    <h3 id="player-points">Ви - 0</h3>
+                    <h3 id="comp-points">Комп’ютер - <span id="comp-points-value">0</span></h3>
+                    <h3 id="player-points">Ви - <span value="0" id="player-points-value">0</span></h3>
             </div>
             <hr>
         </div>
@@ -135,23 +136,29 @@
             <div class="max-number-game-section">
                 <h2 class="game-section-title">Введіть 3 числа</h2>
                 <div class="inputs-max-number">
-                    <input type="text" id="max-number-first-input" placeholder="Введіть число">
-                    <input type="text" id="max-number-second-input" placeholder="Введіть число">
-                    <input type="text" id="max-number-third-input" placeholder="Введіть число">
+                    <input type="number" id="max-number-first-input" placeholder="Введіть число">
+                    <input type="number" id="max-number-second-input" placeholder="Введіть число">
+                    <input type="number" id="max-number-third-input" placeholder="Введіть число">
                 </div>
+                <button id="check-btn">Check</button>
             <p class="result-max-number">Найбільше число, яке ви ввели - <span id="max-number"></span></p>
             </div>
             <hr>
         </div>
-        <div class="game-section">
+        </div>
+        <div class="game-section iy">
             <div class="student">
                 <p id="arrow-left"></p>
                 <h2 class="game-section-title">Наша команда</h2>
-                <div class="img-section"></div>
-                <h2 class="img-title">Лисак Ігор</h2>
-                <p class="img-subtitle">Зробив цей сайт</p>
+                <div class="my-pictures-section">
+                    <img src="./img/my-picture-first.jpg" width="256px" height="256px" class="img-section" alt="">
+                    <img src="./img/my-picture-second.jpg" width="256px" height="256px" class="img-section" alt="">
+                    <img src="./img/my-picture-first.jpg" width="256px" height="256px" class="img-section" alt="">
+                    <img src="./img/my-picture-second.jpg" width="256px" height="256px" class="img-section" alt="">
+                </div>
                 <p id="arrow-right"></p>
             </div>
+            <h2 class="img-title">Лисак Ігор</h2>
             <hr>
         </div>
         <div class="game-section">
