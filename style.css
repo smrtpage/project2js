@@ -217,6 +217,9 @@ body.dark .footer {
   align-items: center;
   flex-direction: column;
   text-align: center;
+  background-image: url(./img/backgroundLeft.svg), url(./img/backgroundRight.svg);
+  background-position: left, right;
+  background-repeat: no-repeat;
 }
 
 .main-title-section{
@@ -722,7 +725,7 @@ body.dark .footer {
   position: absolute;
   content: "";
   border: 1px solid #000;
-  bottom: -1700px;
+  bottom: -2800px;
   z-index: 10;
   display: none;
   align-items: center;
@@ -975,4 +978,111 @@ body.dark .footer {
   line-height: 15px;
 }
 
+#game{
+  width: 600px;
+  height: 200px;
+  border-bottom: 1px solid #6a6a6a;
+  margin: auto;
+}
+
+#dino{
+  width: 50px;
+  height: 50px;
+  background-image: url(./img/dino.png);
+  background-size: 50px 50px;
+  position: relative;
+  top: 150px;
+}
+
+#cactus{
+  width: 50px;
+  height: 50px;
+  background-image: url(./img/cactus.png);
+  background-size: 50px 50px;
+  position: relative;
+  background-repeat: no-repeat;
+  top: 100px;
+  left: 570px;
+  animation: cactusMove 2s infinite linear;
+}
+
+#cont-btn{
+  margin-left: 20px;
+  padding: 10px 20px;
+  height: 35px;
+  background: #000000;
+  box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  font-family: 'Montserrat Alternates';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  text-align: right;
+  color: #FFFFFF;
+  cursor: pointer;
+}
+
+@keyframes cactusMove {
+  0%{
+    left: 580px;
+  }
+  100%{
+    left: -20px;
+  }
+}
+
+.jump{
+  animation: jump 1s linear;
+}
+
+@keyframes jump {
+  0%{
+    top: 150px;
+  }
+  30%{
+    top: 130px;
+  }
+  50%{
+    top: 80px;
+  }
+  80%{
+    top: 130px;
+  }
+  100%{
+    top: 150px;
+  }
+}
+
+#stop-btn{
+  padding: 10px 20px;
+  height: 35px;
+  background: #000000;
+  box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  font-family: 'Montserrat Alternates';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  text-align: right;
+  color: #FFFFFF;
+  cursor: pointer;
+}
+
+/* .stopped-dino {
+  top: 150px;
+  left: 0px;
+}
+
+.stopped-cactus {
+  left: 580px;
+} */
+
+#canvas{
+  width: 720px;
+  height: 220px;
+  border: 2px solid #000000;
+  border-radius: 37px;
+}
 

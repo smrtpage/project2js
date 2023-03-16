@@ -15,6 +15,7 @@ let subBtn = document.getElementById("email-btn");
 let subInput = document.getElementById("email-input");
 let subModalWindow = document.getElementById("modal-window-section-second");
 let closeBtnSecond = document.getElementById("closeBtnSecond");
+let windowSection = document.getElementById("modal-window-section-first");
 
 const checkbox = document.getElementById("checkbox");
 
@@ -274,7 +275,104 @@ PlusBtn.addEventListener("click", plus);
 // /Calculator
 
 
+// Time Calculator 
 
+const timeBtn = document.getElementById("btn-time");
+const outputTextBtn = document.getElementById("time-convertor-text");
 
+timeBtn.addEventListener("click", function(){
+    let minutes = +document.getElementById("input-time").value;
 
+    const day = Math.floor(minutes/(60*24));
+    minutes = minutes%(60*24);
+    let hours = Math.floor(minutes/60);
+    if (hours < 10){
+        hours = "0" + hours;
+    }
+    minutes = minutes%60
+    if (minutes < 10){
+        minutes = "0" + minutes;
+    }
 
+    outputTextBtn.innerText = `${day} дн. ${hours}:${minutes}:00`;
+});
+
+// /Time Calculator
+
+// Dino Game
+
+const dino = document.getElementById("dino");
+const cactus = document.getElementById("cactus");
+const stopBtn = document.getElementById("stop-btn");
+const continueBtn = document.getElementById("cont-btn");
+
+continueBtn.addEventListener("click", function(){
+    cactus.style.animation = "cactusMove 2s infinite linear";
+});
+
+stopBtn.addEventListener("click", function(){
+    cactus.style.animation = "none";
+});
+
+if(windowSection.style.display = "flex"){
+    cactus.style.animation = "none";
+}
+
+document.addEventListener("keydown", function(){
+    jump();
+});
+
+function jump(){
+    if (dino.classList != "jump"){
+        dino.classList.add("jump");
+    }
+    setTimeout(function(){
+        dino.classList.remove("jump");
+    }, 1000);
+}
+
+let isAlive = setInterval(function(){
+    let dinoTop = parseInt(window.getComputedStyle(dino).getPropertyValue("top"));
+    let cactusLeft = parseInt(window.getComputedStyle(cactus).getPropertyValue("left"));
+
+    if(cactusLeft < 50 && cactusLeft > 0 && dinoTop >= 140){
+        alert("Game Over");
+    }
+}, 10);
+
+// /Dino Game
+
+// Football
+
+let canvas = document.getElementById("canvas");
+let context = canvas.getContext("2d");
+let ball = new Image();
+
+canvas.addEventListener("click", function(event){
+    var mouseX = event.pageX;
+    var mouseY = event.clientY;
+    var block = document.querySelector("#canvas");
+    var blockRect = block.getBoundingClientRect();
+    var blockX = blockRect.left;
+    var blockY = blockRect.top;
+    mouseXinBlock = mouseX - blockX - 25;
+    mouseYinBlock = mouseY - blockY - 25;
+    // console.log(mouseXinBlock);
+    // console.log(mouseYinBlock);
+});
+
+var mouseXinBlock = 0;
+var mouseYinBlock = 0;
+
+ball.src = "./img/ball.png";
+canvas.width = 720;
+canvas.height = 220;
+
+function draw(){
+    if(mouseXinBlock > 0 && mouseXinBlock < 670 && mouseYinBlock > 0 && mouseYinBlock < 175){
+        context.fillStyle = "green";
+        context.fillRect(0, 0, 720, 220);
+        context.drawImage(ball, mouseXinBlock, mouseYinBlock);
+    }
+}
+setInterval(draw, 20);

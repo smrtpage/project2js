@@ -33,7 +33,7 @@
 
     <main class="main">
 
-        <div class="modal-window-section">
+        <div class="modal-window-section" id="modal-window-section-first">
             <img src="./img/close.svg" id="closeBtn">
             <h3 class="modal-window-section-text">Привіт!
                 Ви потрапили на сайт інтерактивних ігор та завдань
@@ -68,7 +68,7 @@
         <div class="game-section">
             <h2 class="game-section-title">Вгадай число, яке загадав комп’ютер</h2>
             <div class="game-section-logic">
-                <input type="text" id="input-digit" placeholder="Введіть число від 1-10">
+                <input type="text" id="input-digit" placeholder="Введіть число від 0-10">
                 <button id="btn-digit"></button>
                 <p id="digit-result"></p>
             </div>
@@ -120,16 +120,17 @@
         </div>
         <div class="game-section">
             <h2 class="game-section-title">Google динозавр</h2>
-            <div class="dino">
-                <img src="./img/Google dino.png">
+            <div id="game">
+                <div id="dino"></div>
+                <div id="cactus"></div>
+                <button id="stop-btn">Pause</button>
+                <button id="cont-btn">Start/Continue</button>
             </div>
             <hr>
         </div>
         <div class="game-section">
             <h2 class="game-section-title">Футбол</h2>
-            <div class="football">
-                <img src="./img/Rectangle 33.png">
-            </div>
+            <canvas id="canvas"></canvas>
             <hr>
         </div>
         <div class="game-section">
