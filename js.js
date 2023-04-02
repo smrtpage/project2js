@@ -1,11 +1,4 @@
-let yearInput = document.getElementById("input-year");
-let yearBtn = document.getElementById("btn-year");
-let yearResult = document.getElementById("year-result");
-
-let digitInput = document.getElementById("input-digit");
-let digitBtn = document.getElementById("btn-digit");
-let digitResult = document.getElementById("digit-result");
-
+// Modal Windows
 let userName = document.getElementById("user-text");
 let closeBtn = document.getElementById("closeBtn");
 let inputReg = document.getElementById("input-registration");
@@ -27,6 +20,14 @@ closeBtnSecond.addEventListener("click", function(){
     subModalWindow.style.display = "none";
 });
 
+document.addEventListener("keydown", event => {
+    console.log("Keydown: ", event.code);
+    if(event.code == "Escape"){
+        subModalWindow.style.display = "none";
+        windowSection.style.display = "none";
+    }
+});
+
 checkbox.addEventListener("change", () => {
   document.body.classList.toggle("dark");
 })
@@ -39,8 +40,13 @@ regBtn.addEventListener("click", function(){
 closeBtn.addEventListener("click", function() {
     closeBtn.parentElement.style.display = "none";
 });
+// Modal Windows
 
 // Year
+let yearInput = document.getElementById("input-year");
+let yearBtn = document.getElementById("btn-year");
+let yearResult = document.getElementById("year-result");
+
 yearBtn.addEventListener("click", function(){
     if(yearInput.value % 4 == 0){
         yearResult.style.color = "green";
@@ -54,10 +60,23 @@ yearBtn.addEventListener("click", function(){
         yearResult.innerHTML = "Введіть рік!";
         yearResult.style.color = "red";
     }
+
+    if(Number.isInteger(+yearInput.value) && yearBtn){
+        console.log("number");
+    }else{
+        yearResult.innerHTML = "Введіть рік!";
+        yearResult.style.color = "red";
+        console.log("not number");
+    }
 });
 // /Year
 
 // RandomNumber
+let digitInput = document.getElementById("input-digit");
+let digitBtn = document.getElementById("btn-digit");
+let digitResult = document.getElementById("digit-result");
+
+
 digitBtn.addEventListener("click", function(){
     let randNumber = Math.floor(Math.random() * 10);
     if(randNumber == digitInput.value){
@@ -72,6 +91,14 @@ digitBtn.addEventListener("click", function(){
         digitResult.innerHTML = "Введіть число від 1 до 10!";
         digitResult.style.color = "red";
     }
+
+    if(Number.isInteger(+digitInput.value) && digitBtn){
+        console.log("number");
+    }else{
+        digitResult.innerHTML = "Введіть число!";
+        digitResult.style.color = "red";
+        console.log("not number");
+    }
 });
 // /RandomNumber
 
@@ -83,22 +110,22 @@ const MaxNumberText = document.getElementById("max-number");
 const MaxNumberBtn = document.getElementById("check-btn");
 
 MaxNumberBtn.addEventListener("click", function(){
-if(inputMaxFirst.value > inputMaxSecond.value){
+if(+inputMaxFirst.value > +inputMaxSecond.value){
     MaxNumberText.innerHTML = inputMaxFirst.value;
 }
-if (inputMaxSecond.value > inputMaxFirst.value){
+if (+inputMaxSecond.value > +inputMaxFirst.value){
     MaxNumberText.innerHTML = inputMaxSecond.value;
 }
-if (inputMaxFirst.value > inputMaxThird.value){
+if (+inputMaxFirst.value > +inputMaxThird.value){
     MaxNumberText.innerHTML = inputMaxFirst.value;
 }
-if (inputMaxThird.value > inputMaxFirst.value){
+if (+inputMaxThird.value > +inputMaxFirst.value){
     MaxNumberText.innerHTML = inputMaxThird.value;
 }
-if (inputMaxSecond.value > inputMaxThird.value){
+if (+inputMaxSecond.value > +inputMaxThird.value){
     MaxNumberText.innerHTML = inputMaxSecond.value;
 }
-if (inputMaxThird.value > inputMaxSecond.value){
+if (+inputMaxThird.value > +inputMaxSecond.value){
     MaxNumberText.innerHTML = inputMaxThird.value;
 }
 // if (inputMaxThird.value == inputMaxSecond.value){
@@ -117,6 +144,8 @@ if (inputMaxThird.value == Text || inputMaxSecond.value == Text || inputMaxFirst
 
 // Slider
 
+document.addEventListener("DOMContentLoaded", checkPosition);
+
 let offset = 0;
 const sliderLine = document.querySelector('.my-pictures-section');
 
@@ -126,6 +155,7 @@ document.querySelector('#arrow-right').addEventListener('click', function(){
         offset = 0;
     }
     sliderLine.style.left = -offset + 'px';
+    checkPosition()
 });
 
 document.querySelector('#arrow-left').addEventListener('click', function () {
@@ -134,7 +164,44 @@ document.querySelector('#arrow-left').addEventListener('click', function () {
         offset = 768;
     }
     sliderLine.style.left = -offset + 'px';
+    checkPosition()
 });
+
+
+function checkPosition(){
+    if(offset == 0){
+        document.getElementById("first").classList.add("active-link");
+        document.getElementById("first").classList.remove("non-active-link");
+    }else{
+        document.getElementById("first").classList.remove("active-link");
+        document.getElementById("first").classList.add("non-active-link");
+    }
+
+    if(offset == 256){
+        document.getElementById("second").classList.add("active-link");
+        document.getElementById("second").classList.remove("non-active-link");
+    }else{
+        document.getElementById("second").classList.remove("active-link");
+        document.getElementById("second").classList.add("non-active-link");
+    }
+
+    if(offset == 512){
+        document.getElementById("third").classList.add("active-link");
+        document.getElementById("third").classList.remove("non-active-link");
+    }else{
+        document.getElementById("third").classList.remove("active-link");
+        document.getElementById("third").classList.add("non-active-link");
+    }
+
+    if(offset == 768){
+        document.getElementById("fourth").classList.add("active-link");
+        document.getElementById("fourth").classList.remove("non-active-link");
+    }else{
+        document.getElementById("fourth").classList.remove("active-link");
+        document.getElementById("fourth").classList.add("non-active-link");
+    }
+}
+
 
 // /Slider
 
@@ -228,7 +295,7 @@ rpsBtn.addEventListener("click", computerChoice);
 const firstDigitInput = document.getElementById("digit-first-input");
 const secondDigitInput = document.getElementById("digit-second-input");
 const resultDigitInput = document.getElementById("digit-result-input");
-// const equalBtn = document.getElementById("equal");
+const equalBtn = document.getElementById("equal");
 const PlusBtn = document.getElementById("plus");
 const SubstractBtn = document.getElementById("substract");
 const MultiplyBtn = document.getElementById("multiply");
@@ -265,6 +332,12 @@ function division(){
     console.log(resultDigitInput.value);
 }
 
+if(Number.isInteger(+firstDigitInput.value || +secondDigitInput.value) && equalBtn){
+    console.log("number");
+}else{
+    console.log("not number");
+}
+
 DivisionBtn.addEventListener("click", division);
 MultiplyBtn.addEventListener("click", multiply);
 SubstractBtn.addEventListener("click", substract);
@@ -295,6 +368,13 @@ timeBtn.addEventListener("click", function(){
     }
 
     outputTextBtn.innerText = `${day} дн. ${hours}:${minutes}:00`;
+
+    if(Number.isInteger(+document.getElementById("input-time").value) && equalBtn){
+        console.log("number");
+    }else{
+        alert("Введіть число в хв!")
+        console.log("not number");
+    }
 });
 
 // /Time Calculator
